@@ -20,12 +20,11 @@ export class FilesService {
       debugger;
         let arr = file.file;
         let bytearray = new Uint8Array(arr);
-        let foofoo = new File();
-        alert('new test ' + file.inboxNum);
-        let filePath = foofoo.cacheDirectory;
+        let fileManager = new File();
+        let filePath = fileManager.dataDirectory;
         let fileName=`${file.inboxNum}.${file.extension}`;
-        foofoo.writeFile(filePath, fileName, new Blob([bytearray]),{replace:true}).then(res=>{
-          this.fileOpener2.open(filePath+fileName, mimeType).catch(e=>alert(e.message));
+        fileManager.writeFile(filePath, fileName, new Blob([bytearray]),{replace:true}).then(res=>{
+          this.fileOpener2.open(filePath+fileName, mimeType).catch(e=>alert(e));
         });
 
 

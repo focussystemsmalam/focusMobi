@@ -153,14 +153,14 @@ export class MyApp {
               this.loadingSrvc.loading(false);
               sub.unsubscribe();
               if (excel && excel.file) {
-                this.fileOpener
+              /*  this.fileOpener
                     .openBase64(
                         'excel: ' + excel.inboxNumber,
                         excel.extension,
                         excel.file,
                         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                         () => {}
-                    );
+                    );*/
               }else{
                 this.loadingSrvc.toastMsg('File type not supported');
               }
