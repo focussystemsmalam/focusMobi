@@ -1,0 +1,222 @@
+.toolbar-background {
+  background-color: #323a45 !important;
+  background: #323a45 !important;
+}
+
+.toolbar-title {
+  color: #fdfdfd !important;
+}
+
+/*white for ionic icons*/
+.back-button-icon {
+  color: #fdfdfd;
+}
+
+ion-scroll {
+  white-space: nowrap;
+  height: 60px;
+}
+
+.wide-as-needed { /*for the ion scroll in the tabs*/
+  display: inline !important;
+}
+
+.wide-as-needed .scroll-content {
+  position: initial !important;
+}
+
+/*Regular Details Table*/
+.regular-details-table div {
+  display: flex;
+}
+
+.regular-details-table div span {
+  padding: 4%;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.regular-details-table div span:last-child {
+  font-size: 120%;
+  width: 100%;
+}
+
+/*END - Regular Details Table*/
+
+/*For the datepicker*/
+.fromDate .datepicker-container .datepicker-input-container .datepicker-input:empty:not(:focus):before {
+  content: "From Date";
+  color: #ababab;
+}
+
+.toDate .datepicker-container .datepicker-input-container .datepicker-input:empty:not(:focus):before {
+  content: "To Date";
+  color: #ababab;
+}
+
+/*.item-cover{*/
+/*width: inherit !important;*/
+/*}*/
+/*End Of Date Picker*/
+
+/*icons*/
+.pdf-icon {
+  content: url("assets/icons/pdf.svg");
+}
+
+.tiff-icon {
+  content: url("assets/icons/tiff.svg");
+}
+
+.email-icon {
+  content: url("assets/icons/email.svg");
+}
+
+.doc-icon {
+  content: url("assets/icons/doc.svg");
+}
+
+.ppt-icon {
+  content: url("assets/icons/ppt.svg");
+}
+
+.xml-icon {
+  content: url("assets/icons/xml.svg");
+}
+
+.txt-icon {
+  content: url("assets/icons/text.svg");
+}
+
+/*end of icons*/
+
+/*ionic list*/
+.item-md {
+  padding-left: 0 !important;
+}
+
+.list-md .item-block .item-inner {
+  padding-left: 2.5%;
+}
+
+.item-md.item-block .item-inner {
+  padding-left: 2.5%;
+}
+
+/*end ionic list*/
+
+/*ionic select*/
+.alert-md .alert-head { /*remove the head*/
+  display: none;
+}
+
+.alert-md .alert-radio-icon {
+  display: none !important;
+}
+
+.alert-md .alert-radio-label {
+  color: #7F8D98;
+}
+
+.alert-md [aria-checked=true] .alert-radio-label {
+  color: #323a45 !important;
+  font-weight: bold;
+  background-color: #EBEBEB;
+}
+
+/*.alert-md .alert-button-group { !*box shadow of footer*!*/
+  /*box-shadow: 0px 0px 7px #888888;*/
+/*}*/
+
+.alert-button-group button:first-child span { /*cancel button*/
+  color: #7F8D98;
+  font-size: 12px;
+}
+
+.alert-button-group button:last-child span { /*ok button*/
+  color: #1EBBA6;
+  font-size: 20px;
+}
+
+.select-md .select-icon .select-icon-inner {
+  position: inherit !important;
+  width: inherit !important;
+  border: inherit !important; /*remove the ionic arrow*/
+  margin: inherit !important;
+  top: inherit !important;
+}
+
+.select-md .select-icon .select-icon-inner:before {
+  content: url("icons/down-arrow-2.svg"); /*select arrow new icon*/
+}
+
+/*end ionic select*/
+
+/*fonts*/
+* {
+  font-family: 'Open Sans Hebrew', sans-serif;
+  font-weight: 300;
+}
+.regular-font{
+  font-family: 'Open Sans Hebrew', sans-serif;
+  font-weight: 600;
+}
+.condensed-font {
+  font-family: 'Open Sans Hebrew Condensed', sans-serif;
+  font-weight: 600;
+}
+.condensed-font-400{
+  font-family: 'Open Sans Hebrew Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.login-label-item div div ion-label { /*label al login with focus*/
+  font-size: 15px;
+}
+
+.login-label-item.no-underline .item-inner {
+   border: inherit !important;
+   box-shadow: inherit !important;
+ }
+.login-label-item .item-inner.underline {
+  /*border-bottom: 1px solid #dedede !important;*/
+}
+.login-label-item .item-inner .input-wrapper ion-select{ /*label al login with focus*/
+  padding-left: 0;
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: #dedede !important;
+  /*box-shadow: inset 0 -1px 0 0 #dedede !important;*/
+  box-shadow: inherit !important;
+}
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+  border-bottom-color: #dedede !important;
+   /*border-bottom-color: inherit !important;*/
+   box-shadow: inherit !important;
+}
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+  box-shadow: inherit !important;
+}
+
+/*end fonts*/
+
+/*check-box*/
+.item.item-md .checkbox-md {
+  margin: inherit !important;
+}
+.checkbox-md .checkbox-checked .checkbox-inner{
+  left: 5px !important;
+}
+/*end check-box*/
+
+/*menu*/
+.menu-content{
+  background-color: inherit !important;
+}
+
+.menu-button div div ion-label{
+  padding: 5% 0;
+}
+/*end menu*/
