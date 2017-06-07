@@ -20,9 +20,10 @@ import {MainTableItemComponent} from "./mainTable/MainTableItem";
 import {MainTableComponent} from "./mainTable/mainTable";
 import {Page1} from "./page1/page1";
 import {LoginComponent} from "./login/login";
-import {DatePickerModule} from "ng2-datepicker";
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {IonicModule} from "ionic-angular";
+import {DatePickerModule} from "ng2-datepicker/lib-dist/ng2-datepicker.module";
 
 let components = [
     LoginComponent,

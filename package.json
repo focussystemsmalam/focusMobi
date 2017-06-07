@@ -10,7 +10,12 @@
         "lint": "ionic-app-scripts lint",
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve",
-        "ionic:browser": "ionic cordova run browser --device"
+        "ionic:browser": "ionic cordova run browser --device",
+        "build-android": "ionic cordova build android",
+        "build-android-prod": "ionic cordova build android --prod --aot --release",
+        "build-android-release": "ionic cordova build android --aot --release",
+        "sing-jar": "jarsigner.exe -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore .\\my-release-key.keystore .\\platforms\\android\\build\\outputs\\apk\\android-release-unsigned.apk focusSystems",
+        "zipalign": "C:\\AndroidSdk\\build-tools\\24.0.0\\zipalign.exe -f -v 4 .\\platforms\\android\\build\\outputs\\apk\\android-release-unsigned.apk .\\platforms\\android\\build\\outputs\\apk\\FocusMobiRelease.apk"
     },
     "dependencies": {
         "@angular/common": "4.1.2",
