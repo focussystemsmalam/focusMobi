@@ -3,27 +3,42 @@ import {FileOpener} from "@ionic-native/file-opener";
 import {IFile} from "../server/server-models/file-model";
 import {Base64ToGallery} from "@ionic-native/base64-to-gallery";
 import {File} from "@ionic-native/file";
+import {Platform} from "ionic-angular";
 
 @Injectable()
 export class FilesService {
 
   constructor(private fileOpener2: FileOpener,
-              private base64ToGallery: Base64ToGallery) {
+              private base64ToGallery: Base64ToGallery,
+              private platform: Platform) {
   }
 
   openDocument(file: any, name?: string): boolean {
     let mimeType = this.getMimeType(file);
 
-
     if (mimeType) {
       let arr = file.file;
       let byteArray = new Uint8Array(arr);
-      let fileManager = new File();
-      let filePath = fileManager.dataDirectory;
-      let fileName = `tempFile.${file.extension}`;
-      fileManager.writeFile(filePath, fileName, new Blob([byteArray]), {replace: true}).then(res => {
-        this.fileOpener2.open(filePath + fileName, mimeType).catch(e => alert(e));
-      });
+
+      if (this.platform.is('core')) {
+        let a = window.document.createElement('a');
+        a.href = window.URL.createObjectURL(new Blob([byteArray], {type: mimeType}));
+        a.download = 'temp';
+
+        a.click();
+      }
+      else if (this.platform.is('mobile')) {
+        let fileManager = new File();
+        let v=this.platform.version();
+
+        let filePath = this.platform.is('android') ? v.major > 5 ?  fileManager.dataDirectory : fileManager.externalCacheDirectory
+          : this.platform.is('ios') ? fileManager.cacheDirectory : ''; //cordova.file.cacheDirectory; //fileManager.dataDirectory;
+
+        let fileName = `tempFile.${file.extension}`;
+        fileManager.writeFile(filePath, fileName, new Blob([byteArray]), {replace: true}).then(res => {
+          this.fileOpener2.open(filePath + fileName, mimeType).catch(e => alert(e));
+        });
+      }
 
 
       // window.open(window.URL.createObjectURL(new Blob([bytearray], {type: mimeType})));
