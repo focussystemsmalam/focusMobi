@@ -75,11 +75,11 @@ import {AboutPageComponent} from "../pages/about/about";
           <button class="menu-button" menuClose ion-item (click)="logOut()">
             <span class="icon logout-icon"></span><span class="menu-text">Log Out</span>
           </button>
-          <button class="menu-button" menuClose ion-item (click)="quit()" HideWhen="ios">
-            <span class="icon quit-icon"></span><span class="menu-text">Quit</span>
-          </button>
           <button class="menu-button" menuClose ion-item (click)="aboutPage()">
             <span class="icon switch-icon"></span><span class="menu-text">About</span>
+          </button>
+          <button class="menu-button" menuClose ion-item (click)="quit()" HideWhen="ios">
+            <span class="icon quit-icon"></span><span class="menu-text">Quit</span>
           </button>
         </ion-list>
       </ion-content>

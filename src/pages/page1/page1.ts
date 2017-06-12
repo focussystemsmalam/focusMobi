@@ -17,7 +17,7 @@ import {SearchComponent} from "../search/search";
       height: 8.5%;
       display: flex;
       margin: auto auto 5%;
-
+      top: 70px;
       z-index: 1;
       position: fixed;
       background-color: white;
@@ -26,7 +26,7 @@ import {SearchComponent} from "../search/search";
 
     .spacer {
       padding-top: 2%;
-      height: 9%;
+      height: 11%;
     }
 
     .top-buttons .button {
