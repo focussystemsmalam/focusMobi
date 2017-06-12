@@ -140,7 +140,7 @@ export class ServerService {
   getInbox(inboxNum: string) {
     let params: URLSearchParams = this.paramsGenerator(JSON.parse(JSON.stringify({inboxNum: inboxNum})));
 
-    return this.http.get(this.serverURL + 'GetInboxItemFromArchive', {search: params})
+    return this.http.get(this.serverURL + 'GetInboxItemFromBinArchive', {search: params})
       .map(res => {
         let invoice: InvoiceResponse = new InvoiceResponse(res.json());
         return invoice;
@@ -155,7 +155,7 @@ export class ServerService {
   getArchDocs(inboxNum: string) {
     let params: URLSearchParams = this.paramsGenerator(JSON.parse(JSON.stringify({inboxNum: inboxNum})));
 
-    return this.http.get(this.serverURL + 'GetArchDocsFromArchive', {search: params})
+    return this.http.get(this.serverURL + 'GetArchDocsFromBinArchive', {search: params})
       .map(res => {
         let arcDoc: InvoiceResponse = new InvoiceResponse(res.json());
         return arcDoc;

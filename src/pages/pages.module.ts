@@ -26,45 +26,46 @@ import {IonicModule} from "ionic-angular";
 import {DatePickerModule} from "ng2-datepicker/lib-dist/ng2-datepicker.module";
 
 let components = [
-    LoginComponent,
-    Page1,
-    MainTableComponent,
-    MainTableItemComponent,
-    FileDetailsComponent,
-    PackagesTopView,
-    SearchComponent,
+  LoginComponent,
+  Page1,
+  MainTableComponent,
+  MainTableItemComponent,
+  FileDetailsComponent,
+  PackagesTopView,
+  SearchComponent,
 
-    Tabs,
-    Tab,
-    EventsTab,
-    DocumentsTab,
-    BillingTab,
-    CargoTab,
-    GeneralTab,
-    PackagesTab,
-    PathTab,
-    ArcDocTab
+  Tabs,
+  Tab,
+  EventsTab,
+  DocumentsTab,
+  BillingTab,
+  CargoTab,
+  GeneralTab,
+  PackagesTab,
+  PathTab,
+  ArcDocTab
 ];
 
 @NgModule({
-    declarations:[
-        ...components
-    ],
-    providers   :[],
-    bootstrap   :[],
-    imports     :[
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        DatePickerModule,
-        IonicModule
-    ],
-    exports     :[...components],
-    entryComponents: [
-        LoginComponent,
-        Page1,
-        FileDetailsComponent,
-        SearchComponent
-    ]
+  declarations: [
+    ...components
+  ],
+  providers: [],
+  bootstrap: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DatePickerModule,
+    IonicModule
+  ],
+  exports: [...components],
+  entryComponents: [
+    LoginComponent,
+    Page1,
+    FileDetailsComponent,
+    SearchComponent
+  ]
 })
-export class PagesModule{}
+export class PagesModule {
+}

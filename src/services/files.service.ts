@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {FileOpener} from "@ionic-native/file-opener";
 import {IFile} from "../server/server-models/file-model";
-import {Base64ToGallery} from "@ionic-native/base64-to-gallery";
 import {File} from "@ionic-native/file";
 import {Platform} from "ionic-angular";
 
@@ -9,7 +8,6 @@ import {Platform} from "ionic-angular";
 export class FilesService {
 
   constructor(private fileOpener2: FileOpener,
-              private base64ToGallery: Base64ToGallery,
               private platform: Platform) {
   }
 
@@ -32,7 +30,7 @@ export class FilesService {
         let v=this.platform.version();
 
         let filePath = this.platform.is('android') ? v.major > 5 ?  fileManager.dataDirectory : fileManager.externalCacheDirectory
-          : this.platform.is('ios') ? fileManager.cacheDirectory : ''; //cordova.file.cacheDirectory; //fileManager.dataDirectory;
+          : this.platform.is('ios') ? fileManager.cacheDirectory : '';
 
         let fileName = `tempFile.${file.extension}`;
         fileManager.writeFile(filePath, fileName, new Blob([byteArray]), {replace: true}).then(res => {
@@ -40,38 +38,6 @@ export class FilesService {
         });
       }
 
-
-      // window.open(window.URL.createObjectURL(new Blob([bytearray], {type: mimeType})));
-      // window.navigator.msSaveOrOpenBlob(new Blob([bytearray]));
-      // let a = window.document.createElement('a');
-      // a.href = window.URL.createObjectURL(new Blob([bytearray], {type: mimeType}));
-      // a.download = 'test';
-      //
-      // a.click();
-
-
-      // TODO: eyal
-      /*this.base64ToGallery.base64ToGallery(file.file, { prefix: '_img' }).then(
-       res => console.log('Saved image to gallery ', res),
-       err => console.log('Error saving image to gallery ', err)
-       );
-
-       this.fileOpener2.openBase64(
-       name||'file',
-       file.extension,
-       file.file,
-       mimeType,
-       {
-       error : function(e) {
-       console.log('error status: ' + e.status + ' error message: ' + e.message);
-       alert('error: ' + JSON.stringify(e));
-
-       },
-       success : function() {
-       console.log('file opened');
-       }
-       }
-       );*/
       return true;
     }
     return false;

@@ -1,12 +1,11 @@
 /**
  * Created by eshel on 01/01/2017.
  */
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {InboxObj, InvoiceResponse} from "../../../server/server-models/responses";
 import {ServerService} from "../../../services/server.service";
 import {LoadingService} from "../../../services/loading";
 import {FilesService} from "../../../services/files.service";
-import {Cordova} from "@ionic-native/core";
 
 @Component({
   selector: 'documents-tab',
@@ -77,7 +76,7 @@ export class DocumentsTab{
     let sub = this.server.getInbox(doc.SerNo+"")
         .subscribe((inbox: InvoiceResponse) => {
               this.loadingSrvc.loading(false);
-              //debugger;
+
               sub.unsubscribe();
               if(!this.filesService.openDocument(inbox,'inbox: '+inbox.inboxNumber)){
                 this.loadingSrvc.toastMsg('File type not supported');

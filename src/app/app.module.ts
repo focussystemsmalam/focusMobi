@@ -12,37 +12,42 @@ import "./rxjs.operators";
 import {PagesModule} from "../pages/pages.module";
 import {CoreServicesModule} from "../services/core.services.module";
 import {MyApp} from "./app.component";
+import {AboutPageComponent} from "../pages/about/about";
+import {AppVersion} from "@ionic-native/app-version";
 
 
 const cloudSettings: CloudSettings = {
-    'core': {
-        'app_id': 'APP_ID'
-    }
+  'core': {
+    'app_id': 'APP_ID'
+  }
 };
 
 @NgModule({
-    declarations: [
-        MyApp
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        IonicModule.forRoot(MyApp),
-        CloudModule.forRoot(cloudSettings),
-        // project modules
-        PagesModule,
-        CoreServicesModule
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        //MyApp
-    ],
-    providers: [
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        StatusBar,
-        FileOpener,
-        Base64ToGallery
-    ]
+  declarations: [
+    MyApp,
+    AboutPageComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings),
+    // project modules
+    PagesModule,
+    CoreServicesModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    //MyApp
+    AboutPageComponent
+  ],
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StatusBar,
+    FileOpener,
+    Base64ToGallery,
+    AppVersion
+  ]
 })
 export class AppModule {
 }
